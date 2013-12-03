@@ -15,7 +15,6 @@
 		5667F1E7184D1C8500943EE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667F1E6184D1C8500943EE2 /* main.m */; };
 		5667F1EB184D1C8500943EE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667F1EA184D1C8500943EE2 /* AppDelegate.m */; };
 		5667F1EE184D1C8500943EE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5667F1EC184D1C8500943EE2 /* Main.storyboard */; };
-		5667F1F1184D1C8500943EE2 /* App_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5667F1EF184D1C8500943EE2 /* App_Tracker.xcdatamodeld */; };
 		5667F1F4184D1C8500943EE2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667F1F3184D1C8500943EE2 /* MasterViewController.m */; };
 		5667F1F7184D1C8500943EE2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667F1F6184D1C8500943EE2 /* DetailViewController.m */; };
 		5667F1F9184D1C8500943EE2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5667F1F8184D1C8500943EE2 /* Images.xcassets */; };
@@ -25,6 +24,18 @@
 		5667F203184D1C8500943EE2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5667F1DE184D1C8500943EE2 /* CoreData.framework */; };
 		5667F20B184D1C8500943EE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5667F209184D1C8500943EE2 /* InfoPlist.strings */; };
 		5667F20D184D1C8500943EE2 /* App_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667F20C184D1C8500943EE2 /* App_TrackerTests.m */; };
+		56A78335184D874E00587B15 /* ComponentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78334184D874E00587B15 /* ComponentTableViewController.m */; };
+		56A78338184DAE4700587B15 /* ComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78337184DAE4700587B15 /* ComponentViewController.m */; };
+		56A7833B184DBA3300587B15 /* ComponentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7833A184DBA3300587B15 /* ComponentPageViewController.m */; };
+		56A7833E184DBD3C00587B15 /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7833D184DBD3C00587B15 /* ToDoViewController.m */; };
+		56A78347184DBEDC00587B15 /* CompoentTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78346184DBEDC00587B15 /* CompoentTabBarController.m */; };
+		56A78350184DED9000587B15 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7834F184DED9000587B15 /* Component.m */; };
+		56A78353184DED9000587B15 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78352184DED9000587B15 /* App.m */; };
+		56A78356184DED9000587B15 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78355184DED9000587B15 /* Todo.m */; };
+		56A78359184E16E000587B15 /* TaskDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78358184E16E000587B15 /* TaskDetailsController.m */; };
+		56A7835C184E24CC00587B15 /* NotesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7835B184E24CC00587B15 /* NotesView.m */; };
+		56EFBA7B184D4EA5008A8CD1 /* DetailTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EFBA79184D4EA4008A8CD1 /* DetailTabBarControllerViewController.m */; };
+		56EFBA7F184D5902008A8CD1 /* App_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56EFBA7D184D5902008A8CD1 /* App_Tracker.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +61,6 @@
 		5667F1E9184D1C8500943EE2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5667F1EA184D1C8500943EE2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5667F1ED184D1C8500943EE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5667F1F0184D1C8500943EE2 /* App_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App_Tracker.xcdatamodel; sourceTree = "<group>"; };
 		5667F1F2184D1C8500943EE2 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		5667F1F3184D1C8500943EE2 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		5667F1F5184D1C8500943EE2 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -61,6 +71,29 @@
 		5667F208184D1C8500943EE2 /* App TrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App TrackerTests-Info.plist"; sourceTree = "<group>"; };
 		5667F20A184D1C8500943EE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5667F20C184D1C8500943EE2 /* App_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TrackerTests.m; sourceTree = "<group>"; };
+		56A78333184D874E00587B15 /* ComponentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentTableViewController.h; sourceTree = "<group>"; };
+		56A78334184D874E00587B15 /* ComponentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentTableViewController.m; sourceTree = "<group>"; };
+		56A78336184DAE4700587B15 /* ComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentViewController.h; sourceTree = "<group>"; };
+		56A78337184DAE4700587B15 /* ComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentViewController.m; sourceTree = "<group>"; };
+		56A78339184DBA3300587B15 /* ComponentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentPageViewController.h; sourceTree = "<group>"; };
+		56A7833A184DBA3300587B15 /* ComponentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentPageViewController.m; sourceTree = "<group>"; };
+		56A7833C184DBD3C00587B15 /* ToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
+		56A7833D184DBD3C00587B15 /* ToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
+		56A78345184DBEDC00587B15 /* CompoentTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoentTabBarController.h; sourceTree = "<group>"; };
+		56A78346184DBEDC00587B15 /* CompoentTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompoentTabBarController.m; sourceTree = "<group>"; };
+		56A7834E184DED9000587B15 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Component.h; path = ../Component.h; sourceTree = "<group>"; };
+		56A7834F184DED9000587B15 /* Component.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Component.m; path = ../Component.m; sourceTree = "<group>"; };
+		56A78351184DED9000587B15 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = App.h; path = ../App.h; sourceTree = "<group>"; };
+		56A78352184DED9000587B15 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = App.m; path = ../App.m; sourceTree = "<group>"; };
+		56A78354184DED9000587B15 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Todo.h; path = ../Todo.h; sourceTree = "<group>"; };
+		56A78355184DED9000587B15 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Todo.m; path = ../Todo.m; sourceTree = "<group>"; };
+		56A78357184E16E000587B15 /* TaskDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskDetailsController.h; sourceTree = "<group>"; };
+		56A78358184E16E000587B15 /* TaskDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailsController.m; sourceTree = "<group>"; };
+		56A7835A184E24CC00587B15 /* NotesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesView.h; sourceTree = "<group>"; };
+		56A7835B184E24CC00587B15 /* NotesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesView.m; sourceTree = "<group>"; };
+		56EFBA78184D4EA4008A8CD1 /* DetailTabBarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTabBarControllerViewController.h; sourceTree = "<group>"; };
+		56EFBA79184D4EA4008A8CD1 /* DetailTabBarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTabBarControllerViewController.m; sourceTree = "<group>"; };
+		56EFBA7E184D5902008A8CD1 /* App_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App_Tracker.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,15 +156,37 @@
 		5667F1E0184D1C8500943EE2 /* App Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				56A7835A184E24CC00587B15 /* NotesView.h */,
+				56A7835B184E24CC00587B15 /* NotesView.m */,
+				56A78336184DAE4700587B15 /* ComponentViewController.h */,
+				56A78337184DAE4700587B15 /* ComponentViewController.m */,
+				56A78354184DED9000587B15 /* Todo.h */,
+				56A78355184DED9000587B15 /* Todo.m */,
+				56A78351184DED9000587B15 /* App.h */,
+				56A78352184DED9000587B15 /* App.m */,
+				56A7834E184DED9000587B15 /* Component.h */,
+				56A7834F184DED9000587B15 /* Component.m */,
+				56A78333184D874E00587B15 /* ComponentTableViewController.h */,
+				56A78334184D874E00587B15 /* ComponentTableViewController.m */,
 				5667F1E9184D1C8500943EE2 /* AppDelegate.h */,
 				5667F1EA184D1C8500943EE2 /* AppDelegate.m */,
 				5667F1EC184D1C8500943EE2 /* Main.storyboard */,
+				56A78357184E16E000587B15 /* TaskDetailsController.h */,
+				56A78358184E16E000587B15 /* TaskDetailsController.m */,
+				56A78345184DBEDC00587B15 /* CompoentTabBarController.h */,
+				56A78346184DBEDC00587B15 /* CompoentTabBarController.m */,
+				56A7833C184DBD3C00587B15 /* ToDoViewController.h */,
+				56A7833D184DBD3C00587B15 /* ToDoViewController.m */,
+				56A78339184DBA3300587B15 /* ComponentPageViewController.h */,
+				56A7833A184DBA3300587B15 /* ComponentPageViewController.m */,
 				5667F1F2184D1C8500943EE2 /* MasterViewController.h */,
 				5667F1F3184D1C8500943EE2 /* MasterViewController.m */,
 				5667F1F5184D1C8500943EE2 /* DetailViewController.h */,
 				5667F1F6184D1C8500943EE2 /* DetailViewController.m */,
 				5667F1F8184D1C8500943EE2 /* Images.xcassets */,
-				5667F1EF184D1C8500943EE2 /* App_Tracker.xcdatamodeld */,
+				56EFBA7D184D5902008A8CD1 /* App_Tracker.xcdatamodeld */,
+				56EFBA78184D4EA4008A8CD1 /* DetailTabBarControllerViewController.h */,
+				56EFBA79184D4EA4008A8CD1 /* DetailTabBarControllerViewController.m */,
 				5667F1E1184D1C8500943EE2 /* Supporting Files */,
 			);
 			path = "App Tracker";
@@ -263,11 +318,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56A78338184DAE4700587B15 /* ComponentViewController.m in Sources */,
 				5667F1F7184D1C8500943EE2 /* DetailViewController.m in Sources */,
+				56A78335184D874E00587B15 /* ComponentTableViewController.m in Sources */,
+				56A78347184DBEDC00587B15 /* CompoentTabBarController.m in Sources */,
+				56A78353184DED9000587B15 /* App.m in Sources */,
+				56EFBA7B184D4EA5008A8CD1 /* DetailTabBarControllerViewController.m in Sources */,
+				56A7833B184DBA3300587B15 /* ComponentPageViewController.m in Sources */,
+				56EFBA7F184D5902008A8CD1 /* App_Tracker.xcdatamodeld in Sources */,
+				56A7833E184DBD3C00587B15 /* ToDoViewController.m in Sources */,
 				5667F1F4184D1C8500943EE2 /* MasterViewController.m in Sources */,
-				5667F1F1184D1C8500943EE2 /* App_Tracker.xcdatamodeld in Sources */,
+				56A7835C184E24CC00587B15 /* NotesView.m in Sources */,
+				56A78350184DED9000587B15 /* Component.m in Sources */,
 				5667F1EB184D1C8500943EE2 /* AppDelegate.m in Sources */,
 				5667F1E7184D1C8500943EE2 /* main.m in Sources */,
+				56A78356184DED9000587B15 /* Todo.m in Sources */,
+				56A78359184E16E000587B15 /* TaskDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +542,7 @@
 				5667F212184D1C8500943EE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5667F213184D1C8500943EE2 /* Build configuration list for PBXNativeTarget "App TrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -484,16 +551,17 @@
 				5667F215184D1C8500943EE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		5667F1EF184D1C8500943EE2 /* App_Tracker.xcdatamodeld */ = {
+		56EFBA7D184D5902008A8CD1 /* App_Tracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				5667F1F0184D1C8500943EE2 /* App_Tracker.xcdatamodel */,
+				56EFBA7E184D5902008A8CD1 /* App_Tracker.xcdatamodel */,
 			);
-			currentVersion = 5667F1F0184D1C8500943EE2 /* App_Tracker.xcdatamodel */;
+			currentVersion = 56EFBA7E184D5902008A8CD1 /* App_Tracker.xcdatamodel */;
 			path = App_Tracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
