@@ -26,7 +26,17 @@
 - (IBAction) updateDetails:(id)sender {
     
     NSLog(@"logging....");
+    NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
     self.detailItem.status =[NSNumber numberWithInt:[self.pickerView selectedRowInComponent:0]];
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+
     
 //    self.searchRadius = (int)searchRadiusSlider.value;
     
@@ -65,6 +75,7 @@
         
         self.titleLabel.text = self.detailItem.name;
         NSInteger myInteger = [self.detailItem.status integerValue];
+        NSLog(@"index %d", myInteger);
         [self.pickerView selectRow: myInteger inComponent:0 animated:NO];
 
         //self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"title"] description];
@@ -101,12 +112,25 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.tabBarController.navigationItem.rightBarButtonItem = nil;
+  //  self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+    //self.navigationItem.rightBarButtonItem = self.addButton;
+
+    //self.tabBarController.navigationItem.rightBarButtonItem = nil;
 }
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self configureView];
+    
+    self.addButton = [[UIBarButtonItem alloc]
+                      initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                      target:self action: @selector(updateDetails:)];
+    
+	// Do any additional setup after loading the view.
+    //self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+//    self.navigationItem.rightBarButtonItem = self.addButton;
+        self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+
 	// Do any additional setup after loading the view.
     self.pickerArray  = [[NSArray alloc] initWithObjects:@"Not Started",@"In Progress",@"Draft",@"Second Draft",@"Review",@"Complete", @"Submitted" , nil];
 

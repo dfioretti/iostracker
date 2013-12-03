@@ -11,6 +11,7 @@
 #import "App.h"
 #import "AppDelegate.h"
 #import "CompoentTabBarController.h"
+#import "CircleView.h"
 
 @interface ComponentTableViewController ()
     - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -20,6 +21,7 @@
 @implementation ComponentTableViewController
 
 static NSString *cellIdentifier;
+
 
 
 -(void)setTabController:(UITabBarController *)tabController
@@ -35,6 +37,7 @@ static NSString *cellIdentifier;
         _detailItem = newDetailItem;
     }
 }
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,6 +55,8 @@ static NSString *cellIdentifier;
 }
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.data = [[self.detailItem.components allObjects] mutableCopy];
+    [self.tableView reloadData];
     self.tabController.navigationItem.rightBarButtonItem = self.addButton;
 }
 
@@ -87,6 +92,31 @@ static NSString *cellIdentifier;
                           , nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     [alert show];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Component *component = [self.data objectAtIndex: indexPath.row];
+        NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+        [context deleteObject:component];
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+//        self.data = [[self.detailItem.components allObjects] mutableCopy];
+        self.data = nil;
+        self.data = [[self.detailItem.components allObjects] mutableCopy];
+        [self.tableView reloadData];
+
+        //add code here for when you hit delete
+    }
 }
 
 
@@ -158,6 +188,27 @@ static NSString *cellIdentifier;
 {
     Component *component = [self.data objectAtIndex: indexPath.row];
     cell.textLabel.text = component.name;
+
+    CGRect positionFrame = CGRectMake(0, 0, cell.bounds.size.height - 35, cell.bounds.size.height -35);
+    CircleView *drawBallView = [[CircleView alloc] initWithFrame:positionFrame];
+    int number = [component.status intValue];
+
+    if (number < 2) {
+        drawBallView.colorPicked = [UIColor redColor];
+    } else if (number < 4) {
+        drawBallView.colorPicked = [UIColor orangeColor];
+    } else if (number < 6) {
+        drawBallView.colorPicked = [UIColor yellowColor];
+    } else {
+        drawBallView.colorPicked = [UIColor greenColor];
+    }
+    
+    cell.accessoryView = drawBallView;
+    
+//    [self.contentView addSubview:drawBallView];
+    
+    
+
 }
 
 /*

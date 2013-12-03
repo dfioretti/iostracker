@@ -14,6 +14,7 @@
 @property (strong, nonatomic) App *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *deadlineText;
+@property (strong, nonatomic) UIBarButtonItem *addButton;
 @property (weak, nonatomic) IBOutlet UILabel *emailText;
 @property (weak, nonatomic) IBOutlet UILabel *phoneText;
 @property (weak, nonatomic) IBOutlet UILabel *usernameText;

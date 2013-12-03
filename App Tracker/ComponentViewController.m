@@ -29,8 +29,10 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
     
+    // Update the user interface for the detail item.
+    self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+
     NSLog(@"configure view component detail");
     if (self.detailItem) {
         //self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"title"] description];
@@ -65,6 +67,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self configureView];
+    self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+
 }
 
 - (IBAction) editDetails:(id)sender {
@@ -81,11 +85,43 @@
 }
 
 
+
+
+
+ 
+ -(void) viewWillDisappear:(BOOL)animated
+ {
+     //self.tabBarController.navigationItem.rightBarButtonItem = nil;
+ }
+
+/*
+ -(void)viewWillAppear:(BOOL)animated
+ {
+ self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+ }
+ 
+ - (void)viewDidLoad
+ {
+ self.addButton = [[UIBarButtonItem alloc]
+ initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+ target:self action: @selector(addButtonPressed:)];
+ */
+
+
+
+
+
+
 - (void)viewDidLoad
 {
+    self.addButton = [[UIBarButtonItem alloc]
+                      initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
+                      target:self action: @selector(editDetails:)];
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+
     [self configureView];
 }
 

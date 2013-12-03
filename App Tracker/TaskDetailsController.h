@@ -11,6 +11,7 @@
 
 @interface TaskDetailsController : UIViewController
 
+@property (strong, nonatomic) UIBarButtonItem *addButton;
 @property  (strong, nonatomic) Component *detailItem;
 @property  (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property  (weak, nonatomic) IBOutlet UIPickerView *pickerView;

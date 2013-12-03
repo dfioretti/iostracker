@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;
 @property (weak, nonatomic) IBOutlet UITextField *websiteText;
 @property (weak, nonatomic) IBOutlet UILabel *componentCount;
+@property (strong, nonatomic) UIBarButtonItem *addButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @end

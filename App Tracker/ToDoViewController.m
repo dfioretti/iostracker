@@ -34,6 +34,31 @@ static NSString *cellIdentifier;
     }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Todo *todo = [self.data objectAtIndex: indexPath.row];
+        NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+        [context deleteObject:todo];
+        NSError *error = nil;
+        if (![context save:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+        //        self.data = [[self.detailItem.components allObjects] mutableCopy];
+        self.data = nil;
+        self.data = [[self.detailItem.todos allObjects] mutableCopy];
+        [self.tableView reloadData];
+        
+        //add code here for when you hit delete
+    }
+}
+
 -(void) viewWillDisappear:(BOOL)animated
 {
     self.tabBarController.navigationItem.rightBarButtonItem = nil;

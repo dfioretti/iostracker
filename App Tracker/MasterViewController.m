@@ -237,6 +237,12 @@
 {
     App *object = (App *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[object valueForKey:@"title"] description];
+    CGRect positionFrame = CGRectMake(245, 0, cell.bounds.size.height, cell.bounds.size.height);
+    UILabel *view = [[UILabel alloc] initWithFrame:positionFrame];
+    view.text = [NSString stringWithFormat:@"%d", object.components.count];
+    UIColor *ios7BlueColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    view.textColor = ios7BlueColor;
+    [cell.contentView addSubview:view];
 }
 
 @end

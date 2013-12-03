@@ -96,9 +96,20 @@
     [navController popViewControllerAnimated:YES];
 
    // [self configureView];
-
-  
 }
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    //self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.navigationItem.rightBarButtonItem = self.addButton;
+
+    //self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+}
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"touchesBegan:withEvent:");
@@ -108,6 +119,12 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"didllll");
+    self.addButton = [[UIBarButtonItem alloc]
+                      initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                      target:self action: @selector(updateDetails:)];
+    //self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+    self.navigationItem.rightBarButtonItem = self.addButton;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
