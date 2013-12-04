@@ -30,10 +30,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    UIColor *myColor = [UIColor colorWithRed: 248.0/255.0 green: 248.0/255.0 blue:248.0/255.0 alpha: 1.0];
+    self.tableView.backgroundColor = myColor;
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
+    //self.navigationController.navigationBar.backgroundColor = [UIColor blueColor];
 
 
 }
@@ -239,9 +240,14 @@
     cell.textLabel.text = [[object valueForKey:@"title"] description];
     CGRect positionFrame = CGRectMake(245, 0, cell.bounds.size.height, cell.bounds.size.height);
     UILabel *view = [[UILabel alloc] initWithFrame:positionFrame];
+    view.tag = 1;
     view.text = [NSString stringWithFormat:@"%d", object.components.count];
     UIColor *ios7BlueColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     view.textColor = ios7BlueColor;
+    
+    cell.textLabel.textColor = ios7BlueColor;
+    cell.textLabel.alpha = 1.0;
+    [[cell.contentView viewWithTag:1] removeFromSuperview];
     [cell.contentView addSubview:view];
 }
 

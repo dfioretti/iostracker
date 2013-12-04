@@ -145,11 +145,20 @@
 
 - (void)configureView
 {
+    self.view.backgroundColor = [UIColor colorWithRed: 244.0/255.0 green: 244.0/255.0 blue:244.0/255.0 alpha: 1.0];
+
+    self.view.alpha = 1.0;
     //UITextView *txt = [[UITextView alloc] initWithFrame:CGRectMake(10, 90, 300, 400)];
 //    txt.showsHorizontalScrollIndicator = NO;
-    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 90, 300, 400)];
-    self.textView.backgroundColor = [UIColor lightTextColor];
+    self.textView = [[UITextView alloc] initWithFrame:CGRectMake(10, 70, 300, 400)];
+    self.textView.backgroundColor = [UIColor clearColor];
     self.textView.text = self.detailItem.notes;
+
+    UIColor *ios7BlueColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+
+    self.textView.textColor = ios7BlueColor;
+    self.textView.font = [UIFont fontWithName:@"Helvetica-Bold" size:14.0];
+
     self.textView.delegate = self;
     self.textView.scrollEnabled = YES;
     
@@ -175,12 +184,13 @@
 }
 - (void)textViewDidEndEditing:(UITextView *)textView{
     self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    
     NSLog(@"textViewDidEndEditing:");
 }
 
 - (void)viewDidLoad
 {
-    self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action: @selector(updateDetails:)];
+    self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action: @selector(updateDetails:)];
     //self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
 
     [super viewDidLoad];

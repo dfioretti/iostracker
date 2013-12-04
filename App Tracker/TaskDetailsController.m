@@ -23,11 +23,18 @@
     }
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    self.savedLabel.text = @"";
+}
+
 - (IBAction) updateDetails:(id)sender {
     
     NSLog(@"logging....");
     NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
     self.detailItem.status =[NSNumber numberWithInt:[self.pickerView selectedRowInComponent:0]];
+    int slider = (int)self.progressBar.value;
+    self.detailItem.progress = [NSNumber numberWithInt: slider];
+
     NSError *error = nil;
     if (![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -35,7 +42,8 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
+    self.savedLabel.text = @"Saved!";
+
 
     
 //    self.searchRadius = (int)searchRadiusSlider.value;
@@ -77,6 +85,9 @@
         NSInteger myInteger = [self.detailItem.status integerValue];
         NSLog(@"index %d", myInteger);
         [self.pickerView selectRow: myInteger inComponent:0 animated:NO];
+        float result = [self.detailItem.progress floatValue];
+
+        self.progressBar.value = result;
 
         //self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"title"] description];
         //self.titleLabel.text = [[self.detailItem valueForKey:@"title"] description];
@@ -112,8 +123,10 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+
   //  self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
-    //self.navigationItem.rightBarButtonItem = self.addButton;
+    self.navigationItem.rightBarButtonItem = self.addButton;
 
     //self.tabBarController.navigationItem.rightBarButtonItem = nil;
 }

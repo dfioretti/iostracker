@@ -3,6 +3,13 @@
     <entity name="App" representedClassName="App">
         <attribute name="deadline" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iaddress1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iaddress2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="idate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iemail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interviewer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iphone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String">
@@ -16,7 +23,7 @@
     <entity name="Component" representedClassName="Component" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="progess" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="progress" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="app" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="App" inverseName="components" inverseEntity="App" syncable="YES"/>
         <relationship name="todos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Todo" inverseName="component" inverseEntity="Todo" syncable="YES"/>

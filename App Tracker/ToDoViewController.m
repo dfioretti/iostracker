@@ -39,6 +39,10 @@ static NSString *cellIdentifier;
     return YES;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -61,7 +65,7 @@ static NSString *cellIdentifier;
 
 -(void) viewWillDisappear:(BOOL)animated
 {
-    self.tabBarController.navigationItem.rightBarButtonItem = nil;
+    //self.tabBarController.navigationItem.rightBarButtonItem = nil;
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -75,6 +79,10 @@ static NSString *cellIdentifier;
                       initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                       target:self action: @selector(addButtonPressed:)];
     self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+    
+    UIColor *myColor = [UIColor colorWithRed: 234.0/255.0 green: 234.0/255.0 blue:234.0/255.0 alpha: 0.2];
+    self.tableView.backgroundColor = myColor;
+    //self.tableView.alpha = 0.2;
     
     self.data = [[self.detailItem.todos allObjects] mutableCopy];
     cellIdentifier = @"rowCell2";
@@ -153,6 +161,10 @@ static NSString *cellIdentifier;
 {
     Todo *todo = [self.data objectAtIndex: indexPath.row];
     cell.textLabel.text = todo.title;
+    UIColor *ios7BlueColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+
+    cell.textLabel.textColor = ios7BlueColor;
+    cell.textLabel.alpha = 1.0;
     //cell.textLabel.text = [self.data objectAtIndex:indexPath.row];
 }
 

@@ -36,6 +36,7 @@
     [ballBezierPath fill];
     [self setBackgroundColor:[UIColor clearColor]]; // Happens with and without this line}
     self.opaque = NO;
+    self.alpha = 0.5;
     self.backgroundColor = [UIColor clearColor];
 
 }

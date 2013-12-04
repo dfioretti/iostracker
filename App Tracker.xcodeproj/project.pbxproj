@@ -24,11 +24,11 @@
 		5667F203184D1C8500943EE2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5667F1DE184D1C8500943EE2 /* CoreData.framework */; };
 		5667F20B184D1C8500943EE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5667F209184D1C8500943EE2 /* InfoPlist.strings */; };
 		5667F20D184D1C8500943EE2 /* App_TrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5667F20C184D1C8500943EE2 /* App_TrackerTests.m */; };
-		56A33AF1184E597900BE186A /* CWCustomAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A33AF0184E597900BE186A /* CWCustomAccessoryView.m */; };
 		56A33AF4184E5CDB00BE186A /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A33AF3184E5CDB00BE186A /* CircleView.m */; };
+		56A33AF7184E792A00BE186A /* InterviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A33AF6184E792A00BE186A /* InterviewViewController.m */; };
+		56A33AFA184E7F5F00BE186A /* EditInterviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A33AF9184E7F5F00BE186A /* EditInterviewViewController.m */; };
 		56A78335184D874E00587B15 /* ComponentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78334184D874E00587B15 /* ComponentTableViewController.m */; };
 		56A78338184DAE4700587B15 /* ComponentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78337184DAE4700587B15 /* ComponentViewController.m */; };
-		56A7833B184DBA3300587B15 /* ComponentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7833A184DBA3300587B15 /* ComponentPageViewController.m */; };
 		56A7833E184DBD3C00587B15 /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7833D184DBD3C00587B15 /* ToDoViewController.m */; };
 		56A78347184DBEDC00587B15 /* CompoentTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78346184DBEDC00587B15 /* CompoentTabBarController.m */; };
 		56A78350184DED9000587B15 /* Component.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7834F184DED9000587B15 /* Component.m */; };
@@ -36,6 +36,7 @@
 		56A78356184DED9000587B15 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78355184DED9000587B15 /* Todo.m */; };
 		56A78359184E16E000587B15 /* TaskDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A78358184E16E000587B15 /* TaskDetailsController.m */; };
 		56A7835C184E24CC00587B15 /* NotesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A7835B184E24CC00587B15 /* NotesView.m */; };
+		56CA49C2184EC5D20067CD9C /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CA49C1184EC5D20067CD9C /* StatusViewController.m */; };
 		56EFBA7B184D4EA5008A8CD1 /* DetailTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56EFBA79184D4EA4008A8CD1 /* DetailTabBarControllerViewController.m */; };
 		56EFBA7F184D5902008A8CD1 /* App_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56EFBA7D184D5902008A8CD1 /* App_Tracker.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -73,16 +74,16 @@
 		5667F208184D1C8500943EE2 /* App TrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App TrackerTests-Info.plist"; sourceTree = "<group>"; };
 		5667F20A184D1C8500943EE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5667F20C184D1C8500943EE2 /* App_TrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = App_TrackerTests.m; sourceTree = "<group>"; };
-		56A33AEF184E597900BE186A /* CWCustomAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCustomAccessoryView.h; sourceTree = "<group>"; };
-		56A33AF0184E597900BE186A /* CWCustomAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCustomAccessoryView.m; sourceTree = "<group>"; };
 		56A33AF2184E5CDB00BE186A /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
 		56A33AF3184E5CDB00BE186A /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
+		56A33AF5184E792A00BE186A /* InterviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterviewViewController.h; sourceTree = "<group>"; };
+		56A33AF6184E792A00BE186A /* InterviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterviewViewController.m; sourceTree = "<group>"; };
+		56A33AF8184E7F5F00BE186A /* EditInterviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInterviewViewController.h; sourceTree = "<group>"; };
+		56A33AF9184E7F5F00BE186A /* EditInterviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInterviewViewController.m; sourceTree = "<group>"; };
 		56A78333184D874E00587B15 /* ComponentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentTableViewController.h; sourceTree = "<group>"; };
 		56A78334184D874E00587B15 /* ComponentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentTableViewController.m; sourceTree = "<group>"; };
 		56A78336184DAE4700587B15 /* ComponentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentViewController.h; sourceTree = "<group>"; };
 		56A78337184DAE4700587B15 /* ComponentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentViewController.m; sourceTree = "<group>"; };
-		56A78339184DBA3300587B15 /* ComponentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentPageViewController.h; sourceTree = "<group>"; };
-		56A7833A184DBA3300587B15 /* ComponentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentPageViewController.m; sourceTree = "<group>"; };
 		56A7833C184DBD3C00587B15 /* ToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
 		56A7833D184DBD3C00587B15 /* ToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
 		56A78345184DBEDC00587B15 /* CompoentTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompoentTabBarController.h; sourceTree = "<group>"; };
@@ -97,6 +98,8 @@
 		56A78358184E16E000587B15 /* TaskDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskDetailsController.m; sourceTree = "<group>"; };
 		56A7835A184E24CC00587B15 /* NotesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesView.h; sourceTree = "<group>"; };
 		56A7835B184E24CC00587B15 /* NotesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesView.m; sourceTree = "<group>"; };
+		56CA49C0184EC5D20067CD9C /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		56CA49C1184EC5D20067CD9C /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
 		56EFBA78184D4EA4008A8CD1 /* DetailTabBarControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTabBarControllerViewController.h; sourceTree = "<group>"; };
 		56EFBA79184D4EA4008A8CD1 /* DetailTabBarControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTabBarControllerViewController.m; sourceTree = "<group>"; };
 		56EFBA7E184D5902008A8CD1 /* App_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App_Tracker.xcdatamodel; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 		5667F1E0184D1C8500943EE2 /* App Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				56A33AF5184E792A00BE186A /* InterviewViewController.h */,
+				56A33AF6184E792A00BE186A /* InterviewViewController.m */,
 				56A7835A184E24CC00587B15 /* NotesView.h */,
 				56A7835B184E24CC00587B15 /* NotesView.m */,
 				56A78336184DAE4700587B15 /* ComponentViewController.h */,
@@ -179,16 +184,16 @@
 				5667F1E9184D1C8500943EE2 /* AppDelegate.h */,
 				5667F1EA184D1C8500943EE2 /* AppDelegate.m */,
 				5667F1EC184D1C8500943EE2 /* Main.storyboard */,
+				56CA49C0184EC5D20067CD9C /* StatusViewController.h */,
+				56CA49C1184EC5D20067CD9C /* StatusViewController.m */,
+				56A33AF8184E7F5F00BE186A /* EditInterviewViewController.h */,
+				56A33AF9184E7F5F00BE186A /* EditInterviewViewController.m */,
 				56A78357184E16E000587B15 /* TaskDetailsController.h */,
 				56A78358184E16E000587B15 /* TaskDetailsController.m */,
 				56A78345184DBEDC00587B15 /* CompoentTabBarController.h */,
 				56A78346184DBEDC00587B15 /* CompoentTabBarController.m */,
 				56A7833C184DBD3C00587B15 /* ToDoViewController.h */,
 				56A7833D184DBD3C00587B15 /* ToDoViewController.m */,
-				56A33AEF184E597900BE186A /* CWCustomAccessoryView.h */,
-				56A33AF0184E597900BE186A /* CWCustomAccessoryView.m */,
-				56A78339184DBA3300587B15 /* ComponentPageViewController.h */,
-				56A7833A184DBA3300587B15 /* ComponentPageViewController.m */,
 				5667F1F2184D1C8500943EE2 /* MasterViewController.h */,
 				5667F1F3184D1C8500943EE2 /* MasterViewController.m */,
 				5667F1F5184D1C8500943EE2 /* DetailViewController.h */,
@@ -331,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CA49C2184EC5D20067CD9C /* StatusViewController.m in Sources */,
 				56A78338184DAE4700587B15 /* ComponentViewController.m in Sources */,
 				5667F1F7184D1C8500943EE2 /* DetailViewController.m in Sources */,
 				56A33AF4184E5CDB00BE186A /* CircleView.m in Sources */,
@@ -338,17 +344,17 @@
 				56A78347184DBEDC00587B15 /* CompoentTabBarController.m in Sources */,
 				56A78353184DED9000587B15 /* App.m in Sources */,
 				56EFBA7B184D4EA5008A8CD1 /* DetailTabBarControllerViewController.m in Sources */,
-				56A7833B184DBA3300587B15 /* ComponentPageViewController.m in Sources */,
 				56EFBA7F184D5902008A8CD1 /* App_Tracker.xcdatamodeld in Sources */,
 				56A7833E184DBD3C00587B15 /* ToDoViewController.m in Sources */,
-				56A33AF1184E597900BE186A /* CWCustomAccessoryView.m in Sources */,
 				5667F1F4184D1C8500943EE2 /* MasterViewController.m in Sources */,
 				56A7835C184E24CC00587B15 /* NotesView.m in Sources */,
 				56A78350184DED9000587B15 /* Component.m in Sources */,
 				5667F1EB184D1C8500943EE2 /* AppDelegate.m in Sources */,
 				5667F1E7184D1C8500943EE2 /* main.m in Sources */,
+				56A33AFA184E7F5F00BE186A /* EditInterviewViewController.m in Sources */,
 				56A78356184DED9000587B15 /* Todo.m in Sources */,
 				56A78359184E16E000587B15 /* TaskDetailsController.m in Sources */,
+				56A33AF7184E792A00BE186A /* InterviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

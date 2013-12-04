@@ -19,6 +19,13 @@
 @dynamic title;
 @dynamic username;
 @dynamic website;
+@dynamic iemail;
+@dynamic iphone;
+@dynamic idate;
+@dynamic itime;
+@dynamic interviewer;
+@dynamic iaddress1;
+@dynamic iaddress2;
 @dynamic components;
 
 @end

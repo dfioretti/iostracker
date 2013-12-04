@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * status;
-@property (nonatomic, retain) NSNumber *progress;
+@property (nonatomic, retain) NSNumber * progress;
 @property (nonatomic, retain) NSString *notes;
 @property (nonatomic, retain) App *app;
 @property (nonatomic, retain) NSSet *todos;

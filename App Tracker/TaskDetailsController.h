@@ -14,6 +14,7 @@
 @property (strong, nonatomic) UIBarButtonItem *addButton;
 @property  (strong, nonatomic) Component *detailItem;
 @property  (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property  (weak, nonatomic) IBOutlet UILabel *savedLabel;
 @property  (weak, nonatomic) IBOutlet UIPickerView *pickerView;
 @property  (weak, nonatomic) IBOutlet UISlider  *progressBar;
 @property (strong, nonatomic)          NSArray *pickerArray;

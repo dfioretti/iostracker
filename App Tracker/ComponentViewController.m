@@ -7,10 +7,12 @@
 //
 
 #import "ComponentViewController.h"
+#import "AppDelegate.h"
 
 @interface ComponentViewController ()
     - (void)configureView;
 @end
+
 
 @implementation ComponentViewController
 
@@ -29,37 +31,17 @@
 
 - (void)configureView
 {
-    
     // Update the user interface for the detail item.
     self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
 
     NSLog(@"configure view component detail");
     if (self.detailItem) {
-        //self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"title"] description];
-        //self.titleLabel.text = [[self.detailItem valueForKey:@"title"] description];
         self.deadlineText.text = [[self.detailItem valueForKey:@"deadline"]description];
-        self.emailText.text = [[self.detailItem valueForKey:@"email"]description];
-        self.phoneText.text = [[self.detailItem valueForKey:@"phone"] description];
+        self.phoneText.text = self.detailItem.phone;
+        self.websiteText.text = self.detailItem.website;
+        self.emailText.text = self.detailItem.email;
         self.usernameText.text = [[self.detailItem valueForKey:@"username"] description];
         self.passwordText.text = [[self.detailItem valueForKey:@"password"] description];
-        self.websiteText.text = [[self.detailItem valueForKey:@"website"] description];
-        
-        //Component *c = [[self.detailItem.components allObjects] objectAtIndex:0];
-        //        NSString *numCount = [NSString stringWithFormat:@"%d", self.detailItem.components.count];
-        //self.componentCount.text = c.name;
-        //int myInt = [self.detailItem.components count];
-        
-        /*if (self.detailItem.components) {
-         NSLog(@"has components");
-         } else {
-         NSLog(@"no components");
-         }*/
-        
-        //NSString *numCount = [NSString stringWithFormat:@"%d", count];
-        //self.componentCount.text = numCount;
-        
-        //self.componentCount.text = [NSString stringWithFormat:@"%d", self.detailItem.components.count];
-        //self.componentCount.text = [NSString stringWithFormat:@"%d", ((App *) self.detailItem).components.count];
     }
     
 }
@@ -68,23 +50,92 @@
 {
     [self configureView];
     self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+    self.navigationItem.rightBarButtonItem = self.addButton;
 
 }
+
+- (IBAction) saveDetails:(id)sender {
+    NSManagedObjectContext *context = [[self appDelegate] managedObjectContext];
+    
+    self.detailItem.deadline = self.deadlineText.text;
+    self.detailItem.phone = self.phoneText.text;
+    self.detailItem.website = self.websiteText.text;
+    self.detailItem.email = self.emailText.text;
+    self.detailItem.username = self.usernameText.text;
+    self.detailItem.password = self.passwordText.text;
+    
+    self.deadlineText.enabled = NO;
+    self.usernameText.enabled = NO;
+    self.passwordText.enabled = NO;
+    self.websiteText.enabled = NO;
+    self.emailText.enabled = NO;
+    self.phoneText.enabled = NO;
+    
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    self.tabBarController.navigationItem.rightBarButtonItem = self.addButton;
+}
+
 
 - (IBAction) editDetails:(id)sender {
-    [self performSegueWithIdentifier:@"showEdit" sender:@"component"];
+    self.tabBarController.navigationItem.rightBarButtonItem = self.saveButton;
+    self.deadlineText.enabled = YES;
+    [self.deadlineText becomeFirstResponder];
+    self.usernameText.enabled = YES;
+    self.passwordText.enabled = YES;
+    self.websiteText.enabled = YES;
+    self.emailText.enabled = YES;
+    self.phoneText.enabled = YES;
+    
+    [self reloadInputViews];
+    //[self performSegueWithIdentifier:@"showEdit" sender:@"component"];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showEdit"]) {
-        //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        //App *object = (App *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:self.detailItem];
+
+-(IBAction) callPhone:(id)sender {
+    NSString *phoneNumber = [NSString stringWithFormat:@"%@", self.detailItem.phone]; // dynamically assigned
+    NSString *phoneURLString = [NSString stringWithFormat:@"tel:%@", phoneNumber];
+    NSURL *phoneURL = [NSURL URLWithString:phoneURLString];
+    [[UIApplication sharedApplication] openURL:phoneURL];
+    
+}
+
+-(IBAction) visitWebsite:(id)sender {
+    NSString *string = [NSString stringWithFormat:@"http://%@", self.detailItem.website];//if dyanmic then pass it as a parameter.
+    NSURL *url = [NSURL URLWithString:string];
+    [[UIApplication sharedApplication] openURL:url];
+    
+}
+
+
+-(IBAction)sendEmail:(id)sender{
+    mailComposer = [[MFMailComposeViewController alloc]init];
+    mailComposer.mailComposeDelegate = self;
+    //[mailComposer setSubject:@"Test mail"];
+    [mailComposer setMessageBody:@"" isHTML:NO];
+    NSArray *array = @[self.detailItem.email];
+    [mailComposer setToRecipients: array];
+     [self presentModalViewController:mailComposer animated:YES];
     }
+     
+#pragma mark - mail compose delegate
+-(void)mailComposeController:(MFMailComposeViewController *)controller
+             didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+                 if (result) {
+                     NSLog(@"Result : %d",result);
+                 }
+                 if (error) {
+                     NSLog(@"Error : %@",error);
+                 }
+                 [self dismissModalViewControllerAnimated:YES];
+                 
 }
-
-
 
 
 
@@ -110,13 +161,16 @@
 
 
 
-
-
 - (void)viewDidLoad
 {
     self.addButton = [[UIBarButtonItem alloc]
                       initWithBarButtonSystemItem:UIBarButtonSystemItemEdit
                       target:self action: @selector(editDetails:)];
+    
+    self.saveButton = [[UIBarButtonItem alloc]
+                      initWithBarButtonSystemItem:UIBarButtonSystemItemSave
+                      target:self action: @selector(saveDetails:)];
+
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -129,6 +183,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private methods
+- (AppDelegate *)appDelegate {
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
 
 @end

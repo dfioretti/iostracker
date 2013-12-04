@@ -39,18 +39,9 @@ static NSString *cellIdentifier;
 }
 
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    //self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 -(void) viewWillDisappear:(BOOL)animated
 {
-    self.tabController.navigationItem.rightBarButtonItem = nil;
+    //self.tabController.navigationItem.rightBarButtonItem = nil;
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -129,6 +120,7 @@ static NSString *cellIdentifier;
         
         comp.name = componentName.text;
         comp.status = 0;
+        comp.progress = 0;
         [self.detailItem addComponentsObject:comp];
         
         
@@ -146,6 +138,8 @@ static NSString *cellIdentifier;
 
 - (void)viewDidLoad
 {
+    UIColor *myColor = [UIColor colorWithRed: 234.0/255.0 green: 234.0/255.0 blue:234.0/255.0 alpha: 0.2];
+    self.tableView.backgroundColor = myColor;
     self.addButton = [[UIBarButtonItem alloc]
                      initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                      target:self action: @selector(addButtonPressed:)];
@@ -204,6 +198,10 @@ static NSString *cellIdentifier;
     }
     
     cell.accessoryView = drawBallView;
+    UIColor *ios7BlueColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
+    
+    cell.textLabel.textColor = ios7BlueColor;
+    cell.textLabel.alpha = 1.0;
     
 //    [self.contentView addSubview:drawBallView];
     

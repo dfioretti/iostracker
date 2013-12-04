@@ -10,6 +10,8 @@
 #import "DetailViewController.h"
 #import "ComponentTableViewController.h"
 #import "ComponentViewController.h"
+#import "InterviewViewController.h"
+#import "StatusViewController.h"
 
 @interface DetailTabBarControllerViewController ()
 - (void)configureView;
@@ -34,6 +36,13 @@
     componentView.detailItem = self.detailItem;
 
     componentView.tabController = self;
+    
+    InterviewViewController *interviewController = [self.viewControllers objectAtIndex:2];
+    interviewController.detailItem = self.detailItem;
+    
+    StatusViewController *statusController = [self.viewControllers objectAtIndex:3];
+    statusController.detailItem = self.detailItem;
+    
     
     [self configureView];
 

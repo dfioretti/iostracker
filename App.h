@@ -20,6 +20,16 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSString * website;
+
+@property (nonatomic, retain) NSString * iemail;
+@property (nonatomic, retain) NSString * iphone;
+@property (nonatomic, retain) NSString * idate;
+@property (nonatomic, retain) NSString * itime;
+@property (nonatomic, retain) NSString * interviewer;
+@property (nonatomic, retain) NSString * iaddress1;
+@property (nonatomic, retain) NSString * iaddress2;
+
+
 @property (nonatomic, retain) NSSet *components;
 @end
 
