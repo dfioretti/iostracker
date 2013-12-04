@@ -28,8 +28,7 @@
     if (self.detailItem) {
         self.data = [[self.detailItem.components allObjects] mutableCopy];
     }
-
-
+    [self.tableView reloadData];
 }
 
 
